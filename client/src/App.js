@@ -7,3 +7,5 @@ const App = () => (
         <Route path="/chat" exact component={Chat} />
     </Router>
 )
+
+export default App
