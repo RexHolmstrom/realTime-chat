@@ -11,7 +11,12 @@ const server = http.createServer(app);
 const io = socketio(server); 
 
 io.on('connection', (socket) => {
-    console.log('We have a new connection.')
+    console.log('We have a new connection.');
+
+    socket.on('disconnect', () => {
+        console.log('User have left.');
+    })
+
 })
 
 app.use(router);
