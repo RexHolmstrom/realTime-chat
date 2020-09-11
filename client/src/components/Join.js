@@ -13,7 +13,7 @@ const Join = () => {
                 <div><input placeholder="Name" className="joinInput" type="text" onChange={} /></div>
                 <div><input placeholder="Room" className="joinInput mt-20" type="text" onChange={} /></div>
                 <Link>
-                 <button className="button" type="submit">Sign in</button>
+                 <button className="button mt-20" type="submit">Sign in</button>
                 </Link>
             </div>
         </div>
