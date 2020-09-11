@@ -7,8 +7,10 @@ const Join = () => {
 
 
     return (
-        <div className="joinOuterContain">
-
+        <div className="joinOuterContainer">
+            <div className="joinInnerContainer">
+                <div className="heading"></div>
+            </div>
         </div>
     )
 }
