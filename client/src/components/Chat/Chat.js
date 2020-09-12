@@ -3,6 +3,8 @@ import queryString from 'query-string'
 import io from 'socket.io-client'
 import './Chat.css'
 
+let socket;
+
 const Chat = ({location}) => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
@@ -10,6 +12,8 @@ const Chat = ({location}) => {
 
     useEffect(() => {
         const {name, room} = queryString.parse(location.search) 
+
+        socket = io(); 
 
         setName(name);
         setRoom(room);
