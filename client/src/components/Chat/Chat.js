@@ -18,7 +18,7 @@ const Chat = ({location}) => {
 
         setName(name);
         setRoom(room);
-    })
+    }, [ENDPOINT, location.search])
 
 
     return (
