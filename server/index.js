@@ -1,26 +1,26 @@
-const express = require('express');
-const socketio = require('socket.io');
-const http = require('http');
+const express = require("express");
+const socketio = require("socket.io");
+const http = require("http");
+const { addUser, removeUser, getUser, getUserInRoom } = require("./users.js");
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
-const router = require('./router');
+const router = require("./router");
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server); 
+const io = socketio(server);
 
-io.on('connection', (socket) => {
-    console.log('We have a new connection.');
+io.on("connection", (socket) => {
+  console.log("We have a new connection.");
 
-    socket.on('join', ({ name, room }, callback) => {
-        console.log(name, room)
-        
-    })
+  socket.on("join", ({ name, room }, callback) => {
+    console.log(name, room);
+  });
 
-    socket.on('disconnect', () => {
-        console.log('User have left.');
-    })
+  socket.on("disconnect", () => {
+    console.log("User have left.");
+  });
 });
 
 app.use(router);
