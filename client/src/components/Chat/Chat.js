@@ -35,7 +35,19 @@ const Chat = ({ location }) => {
     socket.off();
   };
 
-  return <h1>Chat</h1>;
+  return (
+    <div className="outerContainer">
+      <div className="container">
+        <input
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          onKeyPress={(event) =>
+            event.key === "Enter" ? sendMessage(event) : null
+          }
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Chat;
