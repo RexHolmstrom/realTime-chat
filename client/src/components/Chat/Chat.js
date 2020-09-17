@@ -24,7 +24,9 @@ const Chat = ({ location }) => {
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
-    socket.on("message", (message) => {});
+    socket.on("message", (message) => {
+      setMessages([...messages, message]);
+    });
   });
 
   return () => {
