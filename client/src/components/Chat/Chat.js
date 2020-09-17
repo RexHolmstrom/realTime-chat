@@ -27,7 +27,7 @@ const Chat = ({ location }) => {
     socket.on("message", (message) => {
       setMessages([...messages, message]);
     });
-  });
+  }, [messages]);
 
   return () => {
     socket.emit("disconnect");
